@@ -172,7 +172,7 @@ const Carousel = () => {
             {isLoading && (
                 <div className="absolute inset-0 z-50 flex items-center justify-center bg-gray-100 rounded-2xl">
                     <div className="text-center">
-                        <div className="w-16 h-16 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                        <div className="w-16 h-16 border-4 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
                         <p className="mt-4 text-gray-600">Loading initiatives...</p>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ const Carousel = () => {
                                 <div className="absolute inset-0 bg-black/40"></div>
 
                                 {/* Gradient overlay for text */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent"></div>
 
                                 {/* Content */}
                                 <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-8 text-white">
@@ -233,7 +233,7 @@ const Carousel = () => {
                                         {item.ctaText && (
                                             <a
                                                 href={item.ctaLink}
-                                                className="inline-block px-6 py-3 md:px-8 md:py-4 bg-sky-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                                                className="inline-block px-6 py-3 md:px-8 md:py-4 bg-sky-600 text-white font-semibold rounded-full hover:bg-sky-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                                                 aria-label={`${item.ctaText} - ${item.title}`}
                                             >
                                                 {item.ctaText}
