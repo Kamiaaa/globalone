@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaArrowRight, FaLinkedinIn, FaHeart, FaHandsHelping, FaSeedling, FaChild, FaWater } from 'react-icons/fa';
 
@@ -6,11 +7,19 @@ const Footer: React.FC = () => {
     <footer className="relative text-gray-200 py-16 px-5 md:px-20 mt-auto">
       {/* Background with dark overlay - NGO themed */}
       <div className="absolute inset-0 z-0">
-        {/* Dark gradient overlay with green/teal tones for NGO */}
-        <div className="absolute inset-0 bg-linear-to-t from-sky-950/95 via-sky-900/90 to-sky-950/85"></div>
-        
+        <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your architectural/real estate background image
+          alt="BIOBUILD Footer Background"
+          height={500}
+          width={500}
+          className="h-full w-full opacity-70"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-sky-900 to-sky-700 opacity-90"></div>
+      </div>
+
         {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,black,transparent)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,black,transparent)]"></div>
         
         {/* Subtle vignette effect */}
         <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"></div>
