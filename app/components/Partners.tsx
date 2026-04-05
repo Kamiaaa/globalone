@@ -129,7 +129,7 @@ const Partners: React.FC = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto overflow-hidden bg-linear-to-r from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12">
+    <div className="w-full max-w-7xl mx-auto overflow-hidden bg-linear-to-r from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12">
       <div className="mb-8 text-center">
         <h2 className="text-3xl md:text-5xl font-lexend font-semibold text-gray-900 dark:text-white mb-8 text-center md:text-center py-14">
           <span className='border-l-8 border-sky-500 rounded-md px-3'>Partners</span>
@@ -151,7 +151,7 @@ const Partners: React.FC = () => {
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.id}-${index}`}
-              className="group flex-shrink-0 w-36 h-28 md:w-40 md:h-24 relative"
+              className="group shrink-0 w-36 h-28 md:w-40 md:h-24 relative"
             >
               {partner.websiteUrl ? (
                 <a
