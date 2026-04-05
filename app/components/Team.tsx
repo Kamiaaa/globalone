@@ -208,29 +208,29 @@ const TeamSection = () => {
   return (
     <>
       {/* Hero Section with Background Image */}
-      <section className="relative px-4 py-32 text-center bg-gray-900 overflow-hidden">
+      <section className="relative px-4 py-32 text-center bg-gray-900 dark:bg-gray-950 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-30 dark:opacity-20"
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Corporate boardroom"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-sky-500 to-sky-700 mix-blend-multiply" aria-hidden="true" />
+          <div className="absolute inset-0 bg-linear-to-r from-sky-500 to-sky-700 dark:from-sky-600 dark:to-sky-800 mix-blend-multiply" aria-hidden="true" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-lexend tracking-tight text-white mb-6">
             Meet Our Team
           </h1>
-          <p className="max-w-2xl mx-auto text-xl text-gray-100">
+          <p className="max-w-2xl mx-auto text-xl text-gray-100 dark:text-gray-200">
             Passionate individuals dedicated to bringing your vision to life with excellence and innovation.
           </p>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4 bg-linear-to-br from-gray-50 via-white to-gray-50">
+      <section className="py-20 px-4 bg-linear-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto">
 
           {/* Team Grid */}
@@ -244,10 +244,10 @@ const TeamSection = () => {
               >
                 {/* Card Container */}
                 <div className={`relative transition-all duration-500 transform-gpu ${
-                  hoveredMember === member.id ? 'scale-105 shadow-2xl' : 'shadow-lg'
+                  hoveredMember === member.id ? 'scale-105 shadow-2xl' : 'shadow-lg dark:shadow-gray-900/50'
                 }`}>
                   {/* Front Card (Visible normally - only image, name, designation) */}
-                  <div className={`relative bg-white rounded-2xl overflow-hidden transition-all duration-500 ${
+                  <div className={`relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden transition-all duration-500 ${
                     hoveredMember === member.id ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                   }`}>
                     {/* Image */}
@@ -262,27 +262,27 @@ const TeamSection = () => {
 
                     {/* Content - Only Name and Designation */}
                     <div className="p-6 text-center">
-                      <h3 className="text-xl font-bold text-gray-800 mb-1">
+                      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
                         {member.name}
                       </h3>
-                      <p className="text-blue-600 font-semibold text-sm">
+                      <p className="text-blue-600 dark:text-blue-400 font-semibold text-sm">
                         {member.designation}
                       </p>
                     </div>
                   </div>
 
                   {/* Back Card with Full Profile (Visible on hover) */}
-                  <div className={`absolute inset-0 bg-linear-to-br from-sky-900 to-sky-500 rounded-2xl transition-all duration-500 ${
+                  <div className={`absolute inset-0 bg-linear-to-br from-sky-900 to-sky-500 dark:from-sky-950 dark:to-sky-700 rounded-2xl transition-all duration-500 ${
                     hoveredMember === member.id ? 'opacity-100 visible' : 'opacity-0 invisible'
                   }`}>
                     {/* Content wrapper with scrollbar on the side */}
                     <div className="flex h-full rounded-2xl">
                       {/* Main Content */}
-                      <div className="flex-1 overflow-y-auto rounded-l-2xl [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/30 [&::-webkit-scrollbar-thumb:hover]:bg-white/50">
+                      <div className="flex-1 overflow-y-auto rounded-l-2xl [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-white/10 dark:[&::-webkit-scrollbar-track]:bg-gray-800/30 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/30 dark:[&::-webkit-scrollbar-thumb]:bg-gray-500/50 [&::-webkit-scrollbar-thumb:hover]:bg-white/50 dark:[&::-webkit-scrollbar-thumb:hover]:bg-gray-400/70">
                         <div className="p-6 text-white">
                           {/* Header with Image, Name, Designation */}
                           <div className="mb-5 text-center">
-                            <div className="w-24 h-24 rounded-full mx-auto mb-3 overflow-hidden border-4 border-white/30">
+                            <div className="w-24 h-24 rounded-full mx-auto mb-3 overflow-hidden border-4 border-white/30 dark:border-gray-700/50">
                               <img
                                 src={member.image}
                                 alt={member.name}
@@ -290,7 +290,7 @@ const TeamSection = () => {
                               />
                             </div>
                             <h4 className="text-xl font-bold">{member.name}</h4>
-                            <p className="text-blue-200 text-sm mb-2">{member.designation}</p>
+                            <p className="text-blue-200 dark:text-blue-300 text-sm mb-2">{member.designation}</p>
                             <div className="flex items-center justify-center gap-2 text-xs">
                               <FaMapMarkerAlt className="w-3 h-3" />
                               <span>{member.location}</span>
@@ -299,14 +299,14 @@ const TeamSection = () => {
 
                           {/* Experience Section */}
                           <div className="mb-5">
-                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 pb-2">
+                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 dark:border-white/10 pb-2">
                               <FaBriefcase className="w-4 h-4" />
                               <h5 className="text-sm font-semibold">Work Experience</h5>
                             </div>
                             <div className="space-y-4">
                               {member.experience.map((exp) => (
                                 <div key={exp.id} className="text-sm">
-                                  <div className="font-semibold text-blue-200">{exp.title}</div>
+                                  <div className="font-semibold text-blue-200 dark:text-blue-300">{exp.title}</div>
                                   <div className="flex items-center gap-1 text-white/80 text-xs mt-1">
                                     <FaBuilding className="w-3 h-3" />
                                     <span>{exp.company}</span>
@@ -323,14 +323,14 @@ const TeamSection = () => {
 
                           {/* Education Section */}
                           <div className="mb-5">
-                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 pb-2">
+                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 dark:border-white/10 pb-2">
                               <FaGraduationCap className="w-4 h-4" />
                               <h5 className="text-sm font-semibold">Education</h5>
                             </div>
                             <div className="space-y-3">
                               {member.education.map((edu) => (
                                 <div key={edu.id} className="text-sm">
-                                  <div className="font-semibold text-blue-200">{edu.degree}</div>
+                                  <div className="font-semibold text-blue-200 dark:text-blue-300">{edu.degree}</div>
                                   <div className="text-white/80 text-xs">{edu.institution}</div>
                                   <div className="text-white/60 text-xs">{edu.year}</div>
                                   <p className="text-white/70 text-xs mt-1 leading-relaxed">{edu.description}</p>
@@ -341,13 +341,13 @@ const TeamSection = () => {
 
                           {/* Skills Section */}
                           <div className="mb-5">
-                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 pb-2">
+                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 dark:border-white/10 pb-2">
                               <FaCode className="w-4 h-4" />
                               <h5 className="text-sm font-semibold">Core Skills</h5>
                             </div>
                             <div className="flex flex-wrap gap-2">
                               {member.skills.map((skill, idx) => (
-                                <span key={idx} className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                                <span key={idx} className="text-xs bg-white/20 dark:bg-white/15 px-2 py-1 rounded-full">
                                   {skill}
                                 </span>
                               ))}
@@ -356,14 +356,14 @@ const TeamSection = () => {
 
                           {/* Achievements */}
                           <div className="mb-5">
-                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 pb-2">
+                            <div className="flex items-center gap-2 mb-3 border-b border-white/20 dark:border-white/10 pb-2">
                               <FaAward className="w-4 h-4" />
                               <h5 className="text-sm font-semibold">Achievements</h5>
                             </div>
                             <div className="space-y-1">
                               {member.achievements.map((achievement, idx) => (
                                 <div key={idx} className="text-sm flex items-center gap-2">
-                                  <FaLightbulb className="w-3 h-3 text-yellow-300" />
+                                  <FaLightbulb className="w-3 h-3 text-yellow-300 dark:text-yellow-400" />
                                   <span className="text-white/80 text-xs">{achievement}</span>
                                 </div>
                               ))}
@@ -371,31 +371,31 @@ const TeamSection = () => {
                           </div>
 
                           {/* Social Links */}
-                          <div className="flex justify-center space-x-4 pt-4 border-t border-white/20">
+                          <div className="flex justify-center space-x-4 pt-4 border-t border-white/20 dark:border-white/10">
                             <a
                               href={member.social.twitter}
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 dark:hover:bg-white/40 transition-all duration-300 transform hover:scale-110"
                               aria-label="Twitter"
                             >
                               <FaTwitter className="w-4 h-4" />
                             </a>
                             <a
                               href={member.social.linkedin}
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 dark:hover:bg-white/40 transition-all duration-300 transform hover:scale-110"
                               aria-label="LinkedIn"
                             >
                               <FaLinkedinIn className="w-4 h-4" />
                             </a>
                             <a
                               href={member.social.github}
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 dark:hover:bg-white/40 transition-all duration-300 transform hover:scale-110"
                               aria-label="GitHub"
                             >
                               <FaGithub className="w-4 h-4" />
                             </a>
                             <a
                               href={member.social.email}
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 dark:hover:bg-white/40 transition-all duration-300 transform hover:scale-110"
                               aria-label="Email"
                             >
                               <FaEnvelope className="w-4 h-4" />
@@ -405,14 +405,14 @@ const TeamSection = () => {
                       </div>
 
                       {/* Scrollbar spacer - maintains rounded corners */}
-                      <div className="w-2 rounded-r-2xl bg-white/10 my-1"></div>
+                      <div className="w-2 rounded-r-2xl bg-white/10 dark:bg-gray-800/30 my-1"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Hover indicator */}
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                  <div className="bg-gray-800 text-white text-xs px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg">
+                  <div className="bg-gray-800 dark:bg-gray-900 text-white text-xs px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg dark:shadow-gray-950">
                     Hover for full profile
                   </div>
                 </div>
@@ -422,7 +422,7 @@ const TeamSection = () => {
 
           {/* CTA Button */}
           <div className="text-center mt-16">
-            <button className="px-8 py-3 bg-linear-to-r from-sky-600 to-sky-900 text-white font-semibold rounded-full hover:from-sky-900 hover:to-sky-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button className="px-8 py-3 bg-linear-to-r from-sky-600 to-sky-900 dark:from-sky-500 dark:to-sky-800 text-white font-semibold rounded-full hover:from-sky-900 hover:to-sky-600 dark:hover:from-sky-800 dark:hover:to-sky-500 transition-all duration-300 transform hover:scale-105 shadow-lg dark:shadow-gray-900/50 hover:shadow-xl">
               Join Our Team
             </button>
           </div>
