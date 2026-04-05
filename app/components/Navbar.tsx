@@ -94,7 +94,7 @@ const Navbar = () => {
       label: 'About Global One',
       dropdown: [
         { label: 'Mission & Vision', href: '/mission-vision' },
-        { label: 'Meet the Team', href: '/' },
+        { label: 'Meet the Team', href: '/team' },
         // { label: 'Laboratories', href: '/' },
         // { label: 'Lounges', href: '/' },
         // { label: 'Billiards & Snooker', href: '/' },

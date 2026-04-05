@@ -95,243 +95,257 @@ const MissionVision: React.FC = () => {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-24 md:py-32 overflow-hidden"
-    >
-      {/* Fixed Parallax Background */}
-      <div 
-        className="absolute inset-0 z-0 bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
-        }}
-      />
-      
-      {/* Dark overlay with gradient */}
-      <div className="absolute inset-0 bg-linear-to-br from-slate-900/90 via-sky-900/80 to-slate-900/90 z-0" />
+    <>
+      {/* Hero Section with Background Image */}
+      <section className="relative px-4 py-32 text-center bg-gray-900 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            className="w-full h-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1639391381901-7074f965310b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Corporate boardroom"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-sky-500 to-sky-900 mix-blend-multiply" aria-hidden="true" />
+        </div>
 
-      {/* Foreground decorative elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-lexend font-bold text-white mb-4 tracking-tight">
-            Our <span className="text-amber-400">Mission & Vision</span>
-          </h2>
-          <div className="w-24 h-1 bg-amber-400 mx-auto rounded-full" />
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto text-lg">
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-lexend tracking-tight text-white mb-6">
+            Mission & Vision
+          </h1>
+          <p className="max-w-2xl mx-auto text-xl text-gray-100">
             For over seven decades, we've transformed lives across Bangladesh through compassion and action.
           </p>
         </div>
+      </section>
 
-        {/* Mission & Vision Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto mb-24">
-          {/* Mission Card */}
-          <div className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-amber-500/20">
-            <div className="absolute -top-6 left-8">
-              <div className="bg-amber-400 rounded-xl p-3 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-slate-900"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-            </div>
+      {/* Main Mission & Vision Content */}
+      <section
+        ref={sectionRef}
+        className="relative py-24 md:py-32 overflow-hidden"
+      >
+        {/* Fixed Parallax Background */}
+        <div 
+          className="absolute inset-0 z-0 bg-fixed bg-center bg-cover bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+          }}
+        />
+        
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0 bg-linear-to-br from-slate-900/90 via-sky-900/80 to-slate-900/90 z-0" />
 
-            <div className="mt-4">
-              <h3 className="text-2xl md:text-3xl font-lexend font-bold text-white mb-4">Our Mission</h3>
-              <p className="text-gray-200 leading-relaxed">
-                To empower women and girls, alleviate extreme rural poverty, improve health and nutrition,
-                and build resilience against humanitarian crises across Bangladesh through rights-based
-                programming and strategic partnerships with government, UN agencies, NGOs, private sector,
-                and social enterprises.
-              </p>
-              <div className="mt-6 flex items-center text-amber-400 group-hover:translate-x-2 transition-transform duration-300">
-                <span className="text-sm font-medium">Learn More</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-              <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Vision Card */}
-          <div className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-amber-500/20">
-            <div className="absolute -top-6 left-8">
-              <div className="bg-amber-400 rounded-xl p-3 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-slate-900"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <h3 className="text-2xl md:text-3xl font-lexend font-bold text-white mb-4">Our Vision</h3>
-              <p className="text-gray-200 leading-relaxed">
-                A Bangladesh where every woman and girl lives with dignity, equality, and opportunity;
-                where extreme rural poverty is eliminated; where communities are healthy, resilient,
-                and empowered to shape their own futures—contributing to a just and sustainable world
-                for generations to come.
-              </p>
-              <div className="mt-6 flex items-center text-amber-400 group-hover:translate-x-2 transition-transform duration-300">
-                <span className="text-sm font-medium">Learn More</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-              <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-            </div>
-          </div>
+        {/* Foreground decorative elements */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
         </div>
 
-        {/* Our Values Section */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-lexend font-bold text-white mb-3">
-              Our <span className="text-amber-400">Core Values</span>
-            </h3>
-            <div className="w-20 h-0.5 bg-amber-400 mx-auto rounded-full" />
-            <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-              The principles that guide everything we do
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-amber-400/50"
-              >
-                <div className="text-amber-400 mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                  {value.icon}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Mission & Vision Cards Grid */}
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto mb-24">
+            {/* Mission Card */}
+            <div className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-amber-500/20">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-amber-400 rounded-xl p-3 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-slate-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                  {value.title}
-                </h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {value.description}
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-2xl md:text-3xl font-lexend font-bold text-white mb-4">Our Mission</h3>
+                <p className="text-gray-200 leading-relaxed">
+                  To empower women and girls, alleviate extreme rural poverty, improve health and nutrition,
+                  and build resilience against humanitarian crises across Bangladesh through rights-based
+                  programming and strategic partnerships with government, UN agencies, NGOs, private sector,
+                  and social enterprises.
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Our Principles Section */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-lexend font-bold text-white mb-3">
-              Our <span className="text-amber-400">Guiding Principles</span>
-            </h3>
-            <div className="w-20 h-0.5 bg-amber-400 mx-auto rounded-full" />
-            <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-              The framework that shapes our approach to creating lasting change
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {principles.map((principle, index) => (
-              <div
-                key={index}
-                className="group relative bg-linear-to-br from-white/5 to-transparent backdrop-blur-sm rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105 overflow-hidden"
-              >
-                {/* Number background */}
-                <div className="absolute top-2 right-2 text-6xl font-bold text-white/5 group-hover:text-white/10 transition-all duration-300">
-                  {principle.number}
+                <div className="mt-6 flex items-center text-amber-400 group-hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-sm font-medium">Learn More</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
-                
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-amber-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-400/30 transition-colors">
-                    <span className="text-amber-400 font-bold text-xl">
-                      {principle.number}
-                    </span>
+              </div>
+
+              <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
+                <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Vision Card */}
+            <div className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-amber-500/20">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-amber-400 rounded-xl p-3 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-slate-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-2xl md:text-3xl font-lexend font-bold text-white mb-4">Our Vision</h3>
+                <p className="text-gray-200 leading-relaxed">
+                  A Bangladesh where every woman and girl lives with dignity, equality, and opportunity;
+                  where extreme rural poverty is eliminated; where communities are healthy, resilient,
+                  and empowered to shape their own futures—contributing to a just and sustainable world
+                  for generations to come.
+                </p>
+                <div className="mt-6 flex items-center text-amber-400 group-hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-sm font-medium">Learn More</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
+                <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Values Section */}
+          <div className="mb-24">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-lexend font-bold text-white mb-3">
+                Our <span className="text-amber-400">Core Values</span>
+              </h3>
+              <div className="w-20 h-0.5 bg-amber-400 mx-auto rounded-full" />
+              <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+                The principles that guide everything we do
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {values.map((value, index) => (
+                <div
+                  key={index}
+                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-amber-400/50"
+                >
+                  <div className="text-amber-400 mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {value.icon}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                    {principle.title}
+                    {value.title}
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    {principle.description}
+                    {value.description}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400">11+</div>
-            <div className="text-sm text-gray-300 mt-1">Years of Service</div>
+          {/* Our Principles Section */}
+          <div className="mb-24">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-lexend font-bold text-white mb-3">
+                Our <span className="text-amber-400">Guiding Principles</span>
+              </h3>
+              <div className="w-20 h-0.5 bg-amber-400 mx-auto rounded-full" />
+              <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+                The framework that shapes our approach to creating lasting change
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {principles.map((principle, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-linear-to-br from-white/5 to-transparent backdrop-blur-sm rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105 overflow-hidden"
+                >
+                  {/* Number background */}
+                  <div className="absolute top-2 right-2 text-6xl font-bold text-white/5 group-hover:text-white/10 transition-all duration-300">
+                    {principle.number}
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-amber-400/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-400/30 transition-colors">
+                      <span className="text-amber-400 font-bold text-xl">
+                        {principle.number}
+                      </span>
+                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+                      {principle.title}
+                    </h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {principle.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400">100+</div>
-            <div className="text-sm text-gray-300 mt-1">Countries Worldwide</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400">Millions</div>
-            <div className="text-sm text-gray-300 mt-1">Lives Transformed</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400">2015</div>
-            <div className="text-sm text-gray-300 mt-1">Year Established</div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
+              <div className="text-3xl md:text-4xl font-bold text-amber-400">11+</div>
+              <div className="text-sm text-gray-300 mt-1">Years of Service</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
+              <div className="text-3xl md:text-4xl font-bold text-amber-400">100+</div>
+              <div className="text-sm text-gray-300 mt-1">Countries Worldwide</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
+              <div className="text-3xl md:text-4xl font-bold text-amber-400">Millions</div>
+              <div className="text-sm text-gray-300 mt-1">Lives Transformed</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-105">
+              <div className="text-3xl md:text-4xl font-bold text-amber-400">2015</div>
+              <div className="text-sm text-gray-300 mt-1">Year Established</div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
